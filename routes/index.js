@@ -28,7 +28,7 @@ router.post('/streams', function (req, res) {
 router.get('/sync', function (req, res) {
     var userId = req.query.userId;
     var streamId = req.query.streamId;
-    var writeToken = req.query.writeToken;
+    var writeToken = req.headers.authorization;
     var latestEventSyncDate = moment(req.query.latestEventSyncDate).toDate();
     console.log("req.query ", req.query);
 
